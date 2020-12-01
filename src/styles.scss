@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.jumbotron{
+    min-height: 100vh;
+}
+
+.mat-tab-body-content{
+    overflow-x: hidden !important;
+}
+
+.mat-dialog-container{
+    padding: 0px !important;
+    overflow-x: hidden !important;
+}
+
+.Light {
+    .jumbotron ,.custom-background {
+        background-color: #e9ecef;
+    }
+
+    body , .mat-select-arrow ,span ,.mat-select-value ,.mat-tab-label ,.mat-form-field-appearance-legacy .mat-form-field-underline ,h3 {
+        color: black !important;
+      }
+
+      .mat-tab-header, .mat-tab-nav-bar {
+        border-bottom: 1px solid rgba(0,0,0,.12);
+    }
+    
+}
+.Dark {
+    .jumbotron ,.custom-background {
+        background-color: #121212;
+    }
+    body ,.mat-select-arrow ,span ,.mat-select-value ,.mat-tab-label , .mat-form-field-appearance-legacy .mat-form-field-underline ,h3 ,i {
+        color: white !important;
+      }
+      .mat-tab-header, .mat-tab-nav-bar {
+        border-bottom: none !important;
+    }
+    .mat-tab-label , .mat-tab-label-content ,label{
+        color: white !important;
+        opacity: 1 !important;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-underline  {
+        background-color: white !important;
+    }
+    table > thead > tr > th , td{
+        color: white !important;
+    }
+}

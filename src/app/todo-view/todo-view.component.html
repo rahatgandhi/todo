@@ -1,0 +1,86 @@
+
+<div class="{{themecolor}}">
+    
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-12">
+        <mat-form-field class='cms-event-matformfield' style="float: right;">
+            <mat-select placeholder="Select Theme color"  [(ngModel)]="themecolor">
+                <mat-option *ngFor="let item of themearray" [value]="item">
+                      {{item}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+    <mat-tab-group>
+        <mat-tab label="Add/Edit"> 
+            <div class="row">
+        <div class="col-12 mt-3">
+            <button class="btn-primary" (click)="openDialog(null)" style="float: right;">
+                Add Task+
+            </button>
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h3  *ngIf="displayItemarray.length > 0" class ="mb-3">List of Todo Task</h3>
+                <div *ngIf="displayItemarray.length > 0" class="table-responsive">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr  *ngFor="let item of displayItemarray;let i=index ">
+                    <td>{{item.title}}</td>
+                    <td>{{item.text}}</td>
+                    <td><i style="cursor: pointer;" class="fa fa-trash" (click)="deleterow(item.id)" aria-hidden="true"></i>
+                       &nbsp; <i style="cursor: pointer;" class="fa fa-pencil-square-o" (click)="editrow(item)" aria-hidden="true"></i></td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+              </div>
+              <div *ngIf="!displayItemarray || displayItemarray.length == 0" class="mt-5">
+               <h3 class="text-center">No Task to show</h3>
+              </div>
+              </div>
+        </div>
+        </mat-tab>
+        <mat-tab label="Overview"> 
+
+            <div class="row mt-5">
+                <div class="col-md-8 offset-md-2">
+                    <h3 class ="mb-3">List of Todo Task</h3>
+                    <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Title</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr  *ngFor="let item of displayItemarray;let i=index ">
+                        <td>{{item.title}}</td>
+                    
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  </div>
+                  </div>
+                  </div>
+        </mat-tab>
+      </mat-tab-group>
+
+
+   
+</div>
+</div>
